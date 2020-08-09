@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>COVID-19</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="covid19">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href=".\css\covid.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+
+        <div class="container">
+            <div class="jumbotron py-3">
+                <h1 class="text-center">{{title}}</h1>
+                <p class="pt-3 text-center">This template is used to provide data for COVID-19 pandemic and COVID-19 pandemic by country and territory.
+                     It uses (Cases in the COVID-19 pandemic)to update the total numbers. 
+                </p>
+                
+
+                <!--all data-->
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h3>
+                                    Confirmed Cases
+                                </h3>
+                                <h3>{{all_data.confirmed.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h3>
+                                    Recovered Cases
+                                </h3>
+                                <h3>{{all_data.recovered.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body">
+                                <h3>
+                                    Death Cases
+                                </h3>
+                                <h3>{{all_data.deaths.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End all data-->
+                
+            <input type="text" class="form-control mt-4" placeholder="enter country here" 
+            ng-model="c" ng-change="get_c_data"/>
+            <h1 class="text-center mt-4 text-uppercase" >{{c}}</h1>
+             <div class="row text-center mt-4" ng-if="c_data">
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h3>
+                                Confirmed Cases
+                            </h3>
+                            <h3>{{c_data.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h3>
+                                Recovered Cases
+                            </h3>
+                            <h3>{{c_data.recovered.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h3>
+                                Death Cases
+                            </h3>
+                            <h3>{{c_data.deaths.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js" integrity="sha512-jiG+LwJB0bmXdn4byKzWH6whPpnLy1pnGA/p3VCXFLk4IJ/Ftfcb22katPTapt35Q6kwrlnRheK6UPOIdJhYTA==" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
